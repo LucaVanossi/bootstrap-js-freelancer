@@ -4,25 +4,61 @@
 Se poi l’utente inserisce un codice promozionale tra i seguenti YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24, 
 fate in modo che l’utente abbia diritto ad uno sconto del 25% sul prezzo finale.*/
 
-const TypeofWork = document.getElementById ("TypeofWork");
+function calcoloTotale() {
 
-const HoursRequested = document.getElementById ("HoursRequested");
-
-const DiscountCode = document.getElementById ("DiscountCode");
-
-let Conto =0;
-
-const element = document.getElementById("Send");
-element.addEventListener("click", CalcoloPrezzo);
-
-function CalcoloPrezzo () {
-if (TypeofWork=="Backend Development") {
-    Conto=(HoursRequested*20.5);
-} else if (TypeofWork=="Frontend Development") {
-    Conto=(HoursRequested*15.3);
-} else (TypeofWork=="Project Analisys") 
-    Conto=(HoursRequested*33.6);
-    return (Conto);
+    const costosviluppoBackEnd = 20.5;
+    const costosviluppoFrontEnd = 15.3;
+    const costoprojectAnalist = 33.6;
     
-} document.getElementById("PrezzoFinale").innerHTML = Conto;
+    let Sconti = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
+    alert(Sconti);
+    
+    let ore = document.getElementById("Hours").value;
+    ore = parseInt(ore);
+    alert(ore);
+    
+    let lavoro = document.getElementById("ToF").value; 
+    alert(lavoro);
+    
+    let valoreSconto = controlloSconto(Sconti);
+    
+    alert(valoreSconto);
 
+    let valore , valoreTotale;
+    switch (lavoro) {
+        case "Backend Development":
+            valore = (ore * costosviluppoBackEnd);
+            valoreTotale = valore - (valore * valoreSconto);
+            break;
+        case "Frontend Development": 
+            valore = ore * costosviluppoFrontEnd;
+            valoreTotale = valore - (valore * valoreSconto);
+            break;
+        case "Project Analisys":
+            valore = ore * costoprojectAnalist;
+            valoreTotale = valore - (valore * valoreSconto);
+            break;
+      
+    }
+    
+    valoreTotale = valoreTotale.toFixed(2);
+    alert("totale " + valoreTotale);
+    
+    document.getElementById("TotaleCalcolato").innerHTML = "Il totale è : " + valoreTotale + "\u20AC";
+    
+    }
+
+    function controlloSconto(lista) { 
+        let discount = document.getElementById("discount").value; //codice sconto
+        discount = discount.toUpperCase();
+        alert(discount);
+        let valoreSconto = 0;
+        for (let i = 0; i < lista.length; i++){
+            if (discount == lista[i]) { 
+                valoreSconto = 0.25;
+                break;
+            } 
+        }
+        return valoreSconto;
+        
+    }
