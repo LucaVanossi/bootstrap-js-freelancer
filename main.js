@@ -12,6 +12,8 @@ const DiscountCode = document.getElementById ("DiscountCode");
 
 let Conto =0;
 
+const element = document.getElementById("Send");
+element.addEventListener("click", CalcoloPrezzo);
 
 function CalcoloPrezzo () {
 if (TypeofWork=="Backend Development") {
@@ -20,4 +22,7 @@ if (TypeofWork=="Backend Development") {
     Conto=(HoursRequested*15.3);
 } else (TypeofWork=="Project Analisys") 
     Conto=(HoursRequested*33.6);
-};
+    return (Conto);
+    
+} document.getElementById("PrezzoFinale").innerHTML = Conto;
+
