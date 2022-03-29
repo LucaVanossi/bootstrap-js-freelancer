@@ -11,18 +11,26 @@ function calcoloTotale() {
     const costoprojectAnalist = 33.6;
     
     let Sconti = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
-    alert(Sconti);
+    /*alert(Sconti);*/
     
     let ore = document.getElementById("Hours").value;
     ore = parseInt(ore);
-    alert(ore);
+    /*alert(ore);*/
     
     let lavoro = document.getElementById("ToF").value; 
-    alert(lavoro);
+    /*alert(lavoro);*/
+    
+    let discountVal = document.getElementById("discount").value;   
+    /*alert(discountVal);*/
     
     let valoreSconto = controlloSconto(Sconti);
+    /*alert(valoreSconto);*/
     
-    alert(valoreSconto);
+
+    if (valoreSconto == 0 && discountVal!= ""){
+        alert("Codice sconto non valido.");
+        document.getElementById("discount").value = "Codice sconto non valido ";
+    }
 
     let valore , valoreTotale;
     switch (lavoro) {
@@ -42,16 +50,14 @@ function calcoloTotale() {
     }
     
     valoreTotale = valoreTotale.toFixed(2);
-    alert("totale " + valoreTotale);
-    
-    document.getElementById("TotaleCalcolato").innerHTML = "Il totale è : " + valoreTotale + "\u20AC";
+        
+    document.getElementById("TotaleCalcolato").innerHTML = "Il totale è : " + valoreTotale + " " + "\u20AC";
     
     }
 
     function controlloSconto(lista) { 
         let discount = document.getElementById("discount").value; //codice sconto
         discount = discount.toUpperCase();
-        alert(discount);
         let valoreSconto = 0;
         for (let i = 0; i < lista.length; i++){
             if (discount == lista[i]) { 
@@ -60,5 +66,4 @@ function calcoloTotale() {
             } 
         }
         return valoreSconto;
-        
     }
