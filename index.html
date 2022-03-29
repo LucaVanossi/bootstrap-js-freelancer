@@ -34,24 +34,24 @@
             <h4 class="text-center" style="margin-top:1%">PORTFOLIO</h4>
                 <div class="container">
                     <div class="row align-items-start">
-                      <div class="col">
-                        <div class="shadow rounded">
-                            <img src="\img\portfolio\cabin.png" class="w-100 " alt="Cabin Website">
+                        <div class="col">
+                            <div class="shadow rounded">
+                            <img src=".\img\portfolio\cabin.png" class="w-100 " alt="Cabin Website">
                             <div><figure class="text-center"><h5 style="margin-top:3%">Cabin Website</h5></figure>
                             </div>
                             <div class="row justify-content-center text-center">
                                 <div class="col-3" style="margin-bottom:2%">
-                                  <button class="rounded border border-primary" style="background-color: rgb(8, 201, 226);">Preview</button>
+                                    <button class="rounded border border-primary" style="background-color: rgb(8, 201, 226);">Preview</button>
                                 </div>
                                 <div class="col-3">
                                     <button class="text-primary rounded border border-primary" style="background-color:white">Visit Site</button>
                                 </div>
-                            </div>
                         </div>
-                      </div>
+                    </div>
+                    </div>
                       <div class="col">
                         <div class="shadow rounded">
-                            <img src="\img\portfolio\cake.png" class="w-100 " alt="Cabin Website">
+                            <img src=".\img\portfolio\cake.png" class="w-100 " alt="Cake Website">
                             <div><figure class="text-center"><h5 style="margin-top:3%">Cake Website</h5></figure>
                             </div>
                             <div class="row justify-content-center text-center">
@@ -66,7 +66,7 @@
                       </div>
                       <div class="col">
                         <div class="shadow rounded">
-                            <img src="\img\portfolio\circus.png" class="w-100 " alt="Cabin Website">
+                            <img src=".\img\portfolio\circus.png" class="w-100 " alt="Circus Website">
                             <div><figure class="text-center"><h5 style="margin-top:3%">Circus Website</h5></figure>
                             </div>
                             <div class="row justify-content-center text-center">
@@ -79,14 +79,14 @@
                             </div>
                         </div>
                       </div>
-            </div>
+                </div>
 
             <!--Portfolio con immagini 2-->
                 <div class="container" style="margin-top:2%">
                     <div class="row align-items-start">
                       <div class="col">
                         <div class="shadow rounded">
-                            <img src="\img\portfolio\game.png" class="w-100 " alt="Cabin Website">
+                            <img src=".\img\portfolio\game.png" class="w-100 " alt="Game Website">
                             <div><figure class="text-center"><h5 style="margin-top:3%">Game Website</h5></figure>
                             </div>
                             <div class="row justify-content-center text-center">
@@ -101,7 +101,7 @@
                       </div>
                       <div class="col">
                         <div class="shadow rounded">
-                            <img src="\img\portfolio\safe.png" class="w-100 " alt="Cabin Website">
+                            <img src=".\img\portfolio\safe.png" class="w-100 " alt="Safe Website">
                             <div><figure class="text-center"><h5 style="margin-top:3%">Safe Website</h5></figure>
                             </div>
                             <div class="row justify-content-center text-center">
@@ -116,7 +116,7 @@
                       </div>
                       <div class="col">
                         <div class="shadow rounded">
-                            <img src="\img\portfolio\submarine.png" class="w-100 " alt="Cabin Website">
+                            <img src=".\img\portfolio\submarine.png" class="w-100 " alt="Submarine Website">
                             <div><figure class="text-center"><h5 style="margin-top:3%">Submarine Website</h5></figure>
                             </div>
                             <div class="row justify-content-center text-center">
@@ -130,16 +130,54 @@
                         </div>
                       </div>
             </div>
-            
+        </main>   
             <!--Form-->
-            <div class="container-fluid">
-
+            <div class="container-fluid" style="height: 500px; margin-top:5%; background-color: rgb(8, 201, 226);">
+                <h4 class="text-center" style="padding-top:2%">WANT AN OFFER?</h4>
+                <div class="row justify-content-evenly" style="border-top:3%;">
+                    <div class="col-5">
+                        <form action="/action_page.php">
+                            <label for="fname">First name:</label><br>
+                            <input class="w-100" type="text" id="fname" name="fname"><br><br>
+                            <label for="lname">E-mail address:</label><br>
+                            <input class="w-100" type="text" id="e-mail" name="e-mail"><br><br>
+                            <label for="TypeofWork">Type of work:</label><br>
+                            <select class="w-100" name="cars" id="cars">
+                                <option value="volvo">Backed Development</option>
+                                <option value="saab">Frontend Development</option>
+                                <option value="opel">Project Analisys</option>
+                              </select> 
+                          </form> 
+                    </div>
+                    <div class="col-5">
+                        <form action="/action_page.php">
+                            <label for="fname">Last Name:</label><br>
+                            <input class="w-100" type="text" id="lname" name="lname"><br><br>
+                            <label for="lname">Hours requested:</label><br>
+                            <input class="w-100" type="number" id="Hours" name="Hours"><br><br>
+                            <label for="TypeofWork">Discount code:</label><br>
+                            <input class="w-100" type="text" id="discount" name="discount"><br> 
+                          </form>
+                    </div>
+                    <div class="col-10">
+                        <form action="/action_page.php">
+                            <label for="Message">Message:</label><br>
+                            <input class="w-100 p-4" type="text" id="Message" name="Message"><br><br>
+                            <div class="row justify-content-center text-center"></div>
+                            <input type="submit" value="Send">
+                        </form>
+                        <p id="PrezzoFinale"></p>
+                  </div>
+                </div>
             </div>
-        </main>
+        
         <footer>
             <!--Location-->
-            <div class="container-fluid">
-
+            <div class="container-fluid text-center" style="height: 200px; background-color:black">
+                <h3 style="padding-top:2%">LOCATION</h3><br>
+                <span>2215 John Daniel Drive</span><br>
+                <span>Clark, MO 65243 </span><br><br>
+                <span>Copyright &#169; Your Website 2021</span>
             </div>
         </footer>
     </body>
